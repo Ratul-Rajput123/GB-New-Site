@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,493 +8,1551 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
   <style>
-    :root{
-      --green:#082d18;
-      --green-2:#0d3b22;
-      --yellow:#ffe300;
-      --yellow-2:#f3d700;
-      --ink:#071d12;
-      --muted:#6b746e;
-      --soft:#f8faf7;
-      --line:#e8eee9;
-      --white:#ffffff;
-      --radius:26px;
-      --shadow:0 22px 60px rgba(8,45,24,.12);
-      --shadow-sm:0 12px 35px rgba(8,45,24,.10);
+    :root {
+      --green: #082d18;
+      --green-2: #0d3b22;
+      --yellow: #ffe300;
+      --yellow-2: #f3d700;
+      --ink: #071d12;
+      --muted: #6b746e;
+      --soft: #f8faf7;
+      --line: #e8eee9;
+      --white: #ffffff;
+      --radius: 26px;
+      --shadow: 0 22px 60px rgba(8, 45, 24, .12);
+      --shadow-sm: 0 12px 35px rgba(8, 45, 24, .10);
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden;}
-    a{text-decoration:none;color:inherit}
-    img,video,iframe{max-width:100%}
-    .container-xl{max-width:1180px}
-    .section{padding:86px 0}
-    .section-sm{padding:56px 0}
-    .text-yellow{color:var(--yellow-2)}
-    .text-green{color:var(--green)}
-    .bg-green{background:var(--green)!important}
-    .bg-yellow{background:var(--yellow)!important}
+    * {
+      box-sizing: border-box
+    }
 
-    .btn-globro{background:var(--green);color:var(--yellow);border:1px solid var(--green);border-radius:14px;padding:8px 17px;font-weight:900;box-shadow:0 12px 24px rgba(8,45,24,.18)}
-    .btn-globro:hover{background:#051f10;color:var(--yellow);transform:translateY(-1px)}
-    .btn-soft{background:#fff;color:var(--green);border:1px solid var(--line);border-radius:14px;padding:13px 22px;font-weight:900;box-shadow:var(--shadow-sm)}
-    .pill{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--green);padding:8px 13px;border-radius:999px;font-size:13px;font-weight:900;box-shadow:0 10px 25px rgba(255,227,0,.32)}
-    .card-soft{background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);backdrop-filter:blur(14px)}
+    html {
+      scroll-behavior: smooth;
+      overflow: hidden;
+      overscroll-behavior: none;
+      touch-action: none;
+    }
+
+    body {
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    img,
+    video,
+    iframe {
+      max-width: 100%
+    }
+
+    .container-xl {
+      max-width: 1180px
+    }
+
+    .section {
+      padding: 86px 0
+    }
+
+    .section-sm {
+      padding: 56px 0
+    }
+
+    .text-yellow {
+      color: var(--yellow-2)
+    }
+
+    .text-green {
+      color: var(--green)
+    }
+
+    .bg-green {
+      background: var(--green) !important
+    }
+
+    .bg-yellow {
+      background: var(--yellow) !important
+    }
+
+    .btn-globro {
+      background: var(--green);
+      color: var(--yellow);
+      border: 1px solid var(--green);
+      border-radius: 14px;
+      padding: 8px 17px;
+      font-weight: 900;
+      box-shadow: 0 12px 24px rgba(8, 45, 24, .18)
+    }
+
+    .btn-globro:hover {
+      background: #051f10;
+      color: var(--yellow);
+      transform: translateY(-1px)
+    }
+
+    .btn-soft {
+      background: #fff;
+      color: var(--green);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 13px 22px;
+      font-weight: 900;
+      box-shadow: var(--shadow-sm)
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--yellow);
+      color: var(--green);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 10px 25px rgba(255, 227, 0, .32)
+    }
+
+    .card-soft {
+      background: rgba(255, 255, 255, .88);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px)
+    }
 
 
-        /* Scroll */
-        .scroll-container {
-            position: relative;
-            width: 100vw;
-            height: 100dvh;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-        }
+    /* Scroll */
+    .scroll-container {
+      position: relative;
+      width: 100vw;
+      height: 100dvh;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
 
-        section {
-            position: absolute;
-            width: 100vw;
-            /* height: 100dvh; */
-            top: 0;
-            left: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform .8s ease, opacity .8s ease;
-            opacity: 0;
-            transform: translateY(100%);
-            box-sizing: border-box;
-        }
+    section {
+      position: absolute;
+      width: 100vw;
+      /* height: 100dvh; */
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform .8s ease, opacity .8s ease;
+      opacity: 0;
+      transform: translateY(100%);
+      box-sizing: border-box;
+    }
 
 
-        section.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    section.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* Navbar */
-    .navbar-wrap{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(232,238,233,.8)}
-    .navbar{padding:11px 0px}
-    .brand-logo{height:32px;width:auto;display:block}
-    .footer-logo{height:44px;width:auto;filter:brightness(0) invert(1)}
-    .navbar-nav .nav-link{font-weight:800;font-size:14px;color:#27382e;margin:0 8px}
-    .navbar-nav .nav-link:hover,.navbar-nav .nav-link.active{color:var(--green)}
-    .theme-btn{width:43px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--green);display:grid;place-items:center}
+    .navbar-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, .86);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(232, 238, 233, .8)
+    }
+
+    .navbar {
+      padding: 11px 0px
+    }
+
+    .brand-logo {
+      height: 32px;
+      width: auto;
+      display: block
+    }
+
+    .footer-logo {
+      height: 44px;
+      width: auto;
+      filter: brightness(0) invert(1)
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 800;
+      font-size: 14px;
+      color: #27382e;
+      margin: 0 8px
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--green)
+    }
+
+    .theme-btn {
+      width: 43px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--green);
+      display: grid;
+      place-items: center
+    }
 
     /* Hero */
-    .hero{position:relative;padding:88px 0 70px;background:radial-gradient(circle at 74% 20%,rgba(255,227,0,.22),transparent 28%),linear-gradient(180deg,#fff 0%,#fbfdfb 100%)}
-    .hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(8,45,24,.10) 1px,transparent 1px);background-size:18px 18px;mask-image:linear-gradient(90deg,transparent,black 24%,black 76%,transparent);opacity:.45;pointer-events:none}
-    .hero h1{font-size:clamp(44px,7vw,88px);font-weight:900;letter-spacing:-4px;line-height:.98;margin-bottom:22px}
-    .hero p{font-size:18px;color:#46554d;max-width:530px;line-height:1.8}
-    .hero-art{position:relative;min-height:540px;display:grid;place-items:center}
-    .hero-figure{width:min(440px,82vw);position:relative;display:grid;place-items:center}
+    .hero {
+      position: relative;
+      padding: 88px 0 70px;
+      background: radial-gradient(circle at 74% 20%, rgba(255, 227, 0, .22), transparent 28%), linear-gradient(180deg, #fff 0%, #fbfdfb 100%)
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(8, 45, 24, .10) 1px, transparent 1px);
+      background-size: 18px 18px;
+      mask-image: linear-gradient(90deg, transparent, black 24%, black 76%, transparent);
+      opacity: .45;
+      pointer-events: none
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 7vw, 88px);
+      font-weight: 900;
+      letter-spacing: -4px;
+      line-height: .98;
+      margin-bottom: 22px
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #46554d;
+      max-width: 530px;
+      line-height: 1.8
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 540px;
+      display: grid;
+      place-items: center
+    }
+
+    .hero-figure {
+      width: min(440px, 82vw);
+      position: relative;
+      display: grid;
+      place-items: center
+    }
+
     /* .hero-figure:before{content:"";position:absolute;width:92%;height:72%;background:var(--yellow);border-radius:48% 52% 46% 54%;filter:blur(.1px);transform:rotate(-12deg);opacity:.95;z-index:0} */
-    .hero-figure img{position:relative;z-index:1;width:100%;height:auto;filter:drop-shadow(0 28px 34px rgba(8,45,24,.16))}
-    .float-card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow-sm);padding:8px 14px;color:var(--green);z-index:3;font-size:13px;}
-    .float-card i{color:var(--green);background:rgba(255,227,0,.55);width:20px;height:20px;border-radius:12px;display:inline-grid;place-items:center;margin-right:5px;}
-    .fc-1{left:0;top:80px}.fc-2{right:0;top:200px}.fc-3{left:58px;bottom:70px}
-    .trusted{display:flex;align-items:center;gap:10px;margin-top:22px}.avatars img{width:36px;height:36px;border-radius:50%;border:2px solid #fff;margin-left:-10px;object-fit:cover}.avatars img:first-child{margin-left:0}
+    .hero-figure img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 28px 34px rgba(8, 45, 24, .16))
+    }
+
+    .float-card {
+      position: absolute;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      padding: 8px 14px;
+      color: var(--green);
+      z-index: 3;
+      font-size: 13px;
+    }
+
+    .float-card i {
+      color: var(--green);
+      background: rgba(255, 227, 0, .55);
+      width: 20px;
+      height: 20px;
+      border-radius: 12px;
+      display: inline-grid;
+      place-items: center;
+      margin-right: 5px;
+    }
+
+    .fc-1 {
+      left: 0;
+      top: 80px
+    }
+
+    .fc-2 {
+      right: 0;
+      top: 200px
+    }
+
+    .fc-3 {
+      left: 58px;
+      bottom: 70px
+    }
+
+    .trusted {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px
+    }
+
+    .avatars img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      margin-left: -10px;
+      object-fit: cover
+    }
+
+    .avatars img:first-child {
+      margin-left: 0
+    }
 
     /* Youtube shorts section */
-    .guidance-card{padding:18px;overflow:hidden}
-    .shorts-frame-wrap{width:100%;max-width:310px;margin:auto;border-radius:28px;box-shadow:0 30px 60px rgba(188, 250, 3, 0)}
-    .shorts-frame{position:relative;width:100%;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#000}
-    .shorts-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-    .feature-mini{display:flex;gap:13px;margin-bottom:28px}.feature-mini i{flex:0 0 42px;width:42px;height:42px;border-radius:14px;background:#f3f7f3;color:var(--green);display:grid;place-items:center;font-size:20px}.feature-mini h6{font-weight:900;margin-bottom:4px}.feature-mini p{font-size:13px;color:var(--muted);margin:0;line-height:1.6}
+    .guidance-card {
+      padding: 18px;
+      overflow: hidden
+    }
+
+    .shorts-frame-wrap {
+      width: 100%;
+      max-width: 310px;
+      margin: auto;
+      border-radius: 28px;
+      box-shadow: 0 30px 60px rgba(188, 250, 3, 0)
+    }
+
+    .shorts-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9/16;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #000
+    }
+
+    .shorts-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0
+    }
+
+    .feature-mini {
+      display: flex;
+      gap: 13px;
+      margin-bottom: 28px
+    }
+
+    .feature-mini i {
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: #f3f7f3;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 20px
+    }
+
+    .feature-mini h6 {
+      font-weight: 900;
+      margin-bottom: 4px
+    }
+
+    .feature-mini p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6
+    }
 
     /* Phones */
-    .phones-stage{position:relative;min-height:320px;display:grid;place-items:center}.phone-img-main{width:min(560px,96vw);filter:drop-shadow(0 34px 45px rgba(8,45,24,.18))}.tag{position:absolute;z-index:4;background:var(--yellow);color:var(--green);font-weight:900;font-size:12px;border-radius:999px;padding:9px 13px;box-shadow:0 10px 22px rgba(8,45,24,.12)}.tag.t1{left:9%;top:16%}.tag.t2{left:14%;top:48%}.tag.t3{left:8%;bottom:16%}.tag.t4{right:9%;top:28%}.tag.t5{right:4%;bottom:27%}
+    .phones-stage {
+      position: relative;
+      min-height: 320px;
+      display: grid;
+      place-items: center
+    }
+
+    .phone-img-main {
+      width: min(560px, 96vw);
+      filter: drop-shadow(0 34px 45px rgba(8, 45, 24, .18))
+    }
+
+    .tag {
+      position: absolute;
+      z-index: 4;
+      background: var(--yellow);
+      color: var(--green);
+      font-weight: 900;
+      font-size: 12px;
+      border-radius: 999px;
+      padding: 9px 13px;
+      box-shadow: 0 10px 22px rgba(8, 45, 24, .12)
+    }
+
+    .tag.t1 {
+      left: 9%;
+      top: 16%
+    }
+
+    .tag.t2 {
+      left: 14%;
+      top: 48%
+    }
+
+    .tag.t3 {
+      left: 8%;
+      bottom: 16%
+    }
+
+    .tag.t4 {
+      right: 9%;
+      top: 28%
+    }
+
+    .tag.t5 {
+      right: 4%;
+      bottom: 27%
+    }
 
     /* Services Section Card Effect */
-    #services{width: 85vw;margin-left: 7vw;position: absolute;border-radius: 35px;background: linear-gradient(135deg, rgba(255, 214, 10, 0.08), rgba(255,255,255,1));box-shadow: 0 20px 50px rgba(0,0,0,0.08),0 8px 20px rgba(0,0,0,0.05);border: 1px solid rgba(255,214,10,0.15);overflow: hidden;}
-   
+    #services {
+      width: 85vw;
+      margin-left: 7vw;
+      position: absolute;
+      border-radius: 35px;
+      background: linear-gradient(135deg, rgba(255, 214, 10, 0.08), rgba(255, 255, 255, 1));
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08), 0 8px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 214, 10, 0.15);
+      overflow: hidden;
+    }
+
     /* desk-girl */
-    .benefit-panel{background:radial-gradient(circle at 82% 16%,rgba(255,227,0,.16),transparent 30%),var(--green);color:#fff;border-radius:var(--radius);padding:46px;box-shadow:var(--shadow)}
-    .benefit-item{display:flex;gap:16px;margin-bottom:26px}.benefit-icon{flex:0 0 45px;width:45px;height:45px;border-radius:50%;background:#fff;color:var(--green);display:grid;place-items:center;font-size:21px}.benefit-item h5{font-weight:900;color:var(--yellow);margin:0 0 4px}.benefit-item p{color:#d9e2dc;margin:0;font-size:14px;line-height:1.6}.desk-illo{min-height:390px;display:grid;place-items:center}.desk-illo img{width:min(420px,90%);filter:drop-shadow(0 24px 36px rgba(0,0,0,.18))}
-   
+    .benefit-panel {
+      background: radial-gradient(circle at 82% 16%, rgba(255, 227, 0, .16), transparent 30%), var(--green);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 46px;
+      box-shadow: var(--shadow)
+    }
+
+    .benefit-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 26px
+    }
+
+    .benefit-icon {
+      flex: 0 0 45px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 21px
+    }
+
+    .benefit-item h5 {
+      font-weight: 900;
+      color: var(--yellow);
+      margin: 0 0 4px
+    }
+
+    .benefit-item p {
+      color: #d9e2dc;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6
+    }
+
+    .desk-illo {
+      min-height: 390px;
+      display: grid;
+      place-items: center
+    }
+
+    .desk-illo img {
+      width: min(420px, 90%);
+      filter: drop-shadow(0 24px 36px rgba(0, 0, 0, .18))
+    }
+
 
     /* Media sections */
-    .yellow-banner{border-radius:var(--radius);overflow:hidden;background:var(--yellow);min-height:360px;position:relative;box-shadow:var(--shadow);display:flex;align-items:center}.yellow-banner img{align-self:flex-end;height:360px;width:52%;object-fit:contain;object-position:bottom center}.yellow-banner h2{font-weight:900;font-size:clamp(30px,4vw,55px);letter-spacing:-2px}.video-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#000}.video-card video{display:block;width:100%;height:420px;object-fit:cover}.split-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#fff}.split-copy{background:var(--yellow);padding:52px}.split-copy h2{font-weight:900;font-size:clamp(34px,5vw,62px);letter-spacing:-2px;line-height:1.05}.split-img{min-height:420px;background:#f7f9f7;display:grid;place-items:center;overflow:hidden}.split-img img{width:88%;max-height:420px;object-fit:contain;}
+    .yellow-banner {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--yellow);
+      min-height: 360px;
+      position: relative;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center
+    }
+
+    .yellow-banner img {
+      align-self: flex-end;
+      height: 360px;
+      width: 52%;
+      object-fit: contain;
+      object-position: bottom center
+    }
+
+    .yellow-banner h2 {
+      font-weight: 900;
+      font-size: clamp(30px, 4vw, 55px);
+      letter-spacing: -2px
+    }
+
+    .video-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #000
+    }
+
+    .video-card video {
+      display: block;
+      width: 100%;
+      height: 420px;
+      object-fit: cover
+    }
+
+    .split-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #fff
+    }
+
+    .split-copy {
+      background: var(--yellow);
+      padding: 52px
+    }
+
+    .split-copy h2 {
+      font-weight: 900;
+      font-size: clamp(34px, 5vw, 62px);
+      letter-spacing: -2px;
+      line-height: 1.05
+    }
+
+    .split-img {
+      min-height: 420px;
+      background: #f7f9f7;
+      display: grid;
+      place-items: center;
+      overflow: hidden
+    }
+
+    .split-img img {
+      width: 88%;
+      max-height: 420px;
+      object-fit: contain;
+    }
 
     /* Testimonials marquee */
-    .review-marquee{overflow:hidden;padding:106px 0 10px;position:relative;margin:104px;border-radius:30px;border:0.5px solid rgba(228, 228, 228, 0.61);}.review-track{display:flex;gap:24px;width:max-content;animation:marquee 120s linear infinite}.review-marquee:hover .review-track,.review-marquee.paused .review-track{animation-play-state:paused}.review-item{width:360px;flex:0 0 360px;margin-left:40px;}.testimonial-card{margin-bottom: 70px;border-radius:24px;padding:78px 28px 28px;position:relative;min-height:270px;box-shadow:var(--shadow-sm);border:1px solid var(--line)}.testimonial-card.yellow{background:var(--yellow)}.testimonial-card.green{background:var(--green);color:#fff}.testimonial-card.light{background:#eeece3}.testimonial-card img{position:absolute;top:-87px;left:50px;width:65%;border-radius:26px;object-fit:cover;}
-    .quote-mark{font-size:44px;font-weight:900;opacity:.55}.testimonial-card h5{font-weight:900}.testimonial-card p{font-size:13px;line-height:1.7;margin-bottom:6px}.testimonial-card hr{opacity:.18}@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .review-marquee {
+      overflow: hidden;
+      padding: 106px 0 10px;
+      position: relative;
+      margin: 104px;
+      border-radius: 30px;
+      border: 0.5px solid rgba(228, 228, 228, 0.61);
+    }
+
+    .review-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      animation: marquee 120s linear infinite
+    }
+
+    .review-marquee:hover .review-track,
+    .review-marquee.paused .review-track {
+      animation-play-state: paused
+    }
+
+    .review-item {
+      width: 360px;
+      flex: 0 0 360px;
+      margin-left: 40px;
+    }
+
+    .testimonial-card {
+      margin-bottom: 70px;
+      border-radius: 24px;
+      padding: 78px 28px 28px;
+      position: relative;
+      min-height: 270px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--line)
+    }
+
+    .testimonial-card.yellow {
+      background: var(--yellow)
+    }
+
+    .testimonial-card.green {
+      background: var(--green);
+      color: #fff
+    }
+
+    .testimonial-card.light {
+      background: #eeece3
+    }
+
+    .testimonial-card img {
+      position: absolute;
+      top: -87px;
+      left: 50px;
+      width: 65%;
+      border-radius: 26px;
+      object-fit: cover;
+    }
+
+    .quote-mark {
+      font-size: 44px;
+      font-weight: 900;
+      opacity: .55
+    }
+
+    .testimonial-card h5 {
+      font-weight: 900
+    }
+
+    .testimonial-card p {
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 6px
+    }
+
+    .testimonial-card hr {
+      opacity: .18
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
 
     /* Coming */
-    .coming-card{margin-top:40px;border-radius:20px;background:#fbfcfb;border:1px solid var(--line);box-shadow:var(--shadow);padding: 50px;}.coming-phone-img{width:min(160px,25%);filter:drop-shadow(0 34px 45px rgba(8,45,24,.18))}.flags span{font-size:34px;margin-right:11px}
+    .coming-card {
+      margin-top: 40px;
+      border-radius: 20px;
+      background: #fbfcfb;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 50px;
+    }
+
+    .coming-phone-img {
+      width: min(160px, 25%);
+      filter: drop-shadow(0 34px 45px rgba(8, 45, 24, .18))
+    }
+
+    .flags span {
+      font-size: 34px;
+      margin-right: 11px
+    }
 
     /* Footer */
-    footer{width:100vw;background:linear-gradient(135deg,#082d18,#0b3b21);color:#fff;padding:64px 0 24px}.footer-title{font-weight:900;color:#fff;margin-bottom:18px}footer a,footer p{color:#d9e5de;font-size:14px}.social a{width:38px;height:38px;border-radius:50%;background:#fff;color:var(--green);display:inline-grid;place-items:center;margin-right:8px}.footer-bottom{border-top:1px solid rgba(255,255,255,.16);margin-top:38px;padding-top:22px;font-size:13px;color:#d9e5de}.whatsapp{position:fixed;right:22px;bottom:22px;z-index:999;width:55px;height:55px;border-radius:50%;background:#1db954;color:#fff;display:grid;place-items:center;font-size:26px;box-shadow:0 15px 30px rgba(0,0,0,.22)}
+    footer {
+      width: 100vw;
+      background: linear-gradient(135deg, #082d18, #0b3b21);
+      color: #fff;
+      padding: 64px 0 24px
+    }
 
-    @media (max-width:991px){.section{padding:66px 0}.hero{padding:60px 0}.hero h1{letter-spacing:-2px}.hero-art{min-height:470px;margin-top:35px}.fc-1{left:20px}.fc-2{right:20px}.shorts-frame-wrap{max-width:280px}.yellow-banner{display:block;text-align:center}.yellow-banner img{width:100%;height:320px}.yellow-banner .p-5{padding:32px!important}.benefit-panel{padding:32px}.split-copy{padding:36px}.video-card video{height:320px}.review-item{width:320px;flex-basis:320px}}
-    @media (max-width:767px){
-    .hero-section-content{display:none;}
-    .vdo-sec{margin-top: 20%;}
-    .video-section-content{display: none;}
-    .serv-sec{margin-top: 25%;}
-    .service-section-content{display: none;}
-    .girl-sec-mb-res-ftre{display: none;}
-    .girl-sec-ftre-h{font-size: 14px;}
-    .girl-sec-ftre-desc{font-size: 10px;}
-    .desk-illo img {width:70%;}
-    .girl-sec{margin-top: 10%;}
-    .bro-girl-sec{margin-top: 20%;}
-    .grad-boy-sec{margin-top: 10%;}
-    .grad-boy-sec-sprk-icon{display: none;}
-    .split-img img {width: 60%;}
-    .pill{display: none;}
-    .review-marquee{margin:38px}
-    .brand-logo{height:32px}.navbar .btn-globro{padding:10px 14px;font-size:12px}.hero p{font-size:16px}.hero-art{min-height:390px}.hero-figure{width:290px}.float-card{font-size:12px;padding:12px}.fc-1{top:35px;left:0}.fc-2{top:150px;right:0}.fc-3{bottom:40px;left:10px}.shorts-frame-wrap{max-width:250px}.phones-stage{min-height:390px}.phone-img-main{width:96vw}.tag{font-size:10px;padding:7px 10px}.tag.t1{left:4%;top:14%}.tag.t2{left:4%;top:47%}.tag.t3{left:4%;bottom:14%}.tag.t4{right:2%;top:28%}.tag.t5{right:1%;bottom:24%}.benefit-panel{padding:26px;border-radius:22px}.desk-illo{min-height:250px}.yellow-banner img{height:260px}.split-img{min-height:300px}.review-item{width:285px;flex-basis:285px}.testimonial-card{padding:70px 22px 24px}.coming-card{padding:28px}.section-sm{padding:40px 0}}
- 
- </style>
+    .footer-title {
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 18px
+    }
+
+    footer a,
+    footer p {
+      color: #d9e5de;
+      font-size: 14px
+    }
+
+    .social a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--green);
+      display: inline-grid;
+      place-items: center;
+      margin-right: 8px
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .16);
+      margin-top: 38px;
+      padding-top: 22px;
+      font-size: 13px;
+      color: #d9e5de
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #1db954;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, .22)
+    }
+
+    @media (max-width:991px) {
+      .section {
+        padding: 66px 0
+      }
+
+      .hero {
+        padding: 60px 0
+      }
+
+      .hero h1 {
+        letter-spacing: -2px
+      }
+
+      .hero-art {
+        min-height: 470px;
+        margin-top: 35px
+      }
+
+      .fc-1 {
+        left: 20px
+      }
+
+      .fc-2 {
+        right: 20px
+      }
+
+      .shorts-frame-wrap {
+        max-width: 280px
+      }
+
+      .yellow-banner {
+        display: block;
+        text-align: center
+      }
+
+      .yellow-banner img {
+        width: 100%;
+        height: 320px
+      }
+
+      .yellow-banner .p-5 {
+        padding: 32px !important
+      }
+
+      .benefit-panel {
+        padding: 32px
+      }
+
+      .split-copy {
+        padding: 36px
+      }
+
+      .video-card video {
+        height: 320px
+      }
+
+      .review-item {
+        width: 320px;
+        flex-basis: 320px
+      }
+    }
+
+    @media (max-width:767px) {
+      .hero-section-content {
+        display: none;
+      }
+
+      .vdo-sec {
+        margin-top: 20%;
+      }
+
+      .video-section-content {
+        display: none;
+      }
+
+      .serv-sec {
+        margin-top: 25%;
+      }
+
+      .service-section-content {
+        display: none;
+      }
+
+      .girl-sec-mb-res-ftre {
+        display: none;
+      }
+
+      .girl-sec-ftre-h {
+        font-size: 14px;
+      }
+
+      .girl-sec-ftre-desc {
+        font-size: 10px;
+      }
+
+      .desk-illo img {
+        width: 70%;
+      }
+
+      .girl-sec {
+        margin-top: 10%;
+      }
+
+      .bro-girl-sec {
+        margin-top: 20%;
+      }
+
+      .grad-boy-sec {
+        margin-top: 10%;
+      }
+
+      .grad-boy-sec-sprk-icon {
+        display: none;
+      }
+
+      .split-img img {
+        width: 60%;
+      }
+
+      .pill {
+        display: none;
+      }
+
+      .review-marquee {
+        margin: 38px
+      }
+
+      .brand-logo {
+        height: 32px
+      }
+
+      .navbar .btn-globro {
+        padding: 10px 14px;
+        font-size: 12px
+      }
+
+      .hero p {
+        font-size: 16px
+      }
+
+      .hero-art {
+        min-height: 390px
+      }
+
+      .hero-figure {
+        width: 290px
+      }
+
+      .float-card {
+        font-size: 12px;
+        padding: 12px
+      }
+
+      .fc-1 {
+        top: 35px;
+        left: 0
+      }
+
+      .fc-2 {
+        top: 150px;
+        right: 0
+      }
+
+      .fc-3 {
+        bottom: 40px;
+        left: 10px
+      }
+
+      .shorts-frame-wrap {
+        max-width: 250px
+      }
+
+      .phones-stage {
+        min-height: 390px
+      }
+
+      .phone-img-main {
+        width: 96vw
+      }
+
+      .tag {
+        font-size: 10px;
+        padding: 7px 10px
+      }
+
+      .tag.t1 {
+        left: 4%;
+        top: 14%
+      }
+
+      .tag.t2 {
+        left: 4%;
+        top: 47%
+      }
+
+      .tag.t3 {
+        left: 4%;
+        bottom: 14%
+      }
+
+      .tag.t4 {
+        right: 2%;
+        top: 28%
+      }
+
+      .tag.t5 {
+        right: 1%;
+        bottom: 24%
+      }
+
+      .benefit-panel {
+        padding: 26px;
+        border-radius: 22px
+      }
+
+      .desk-illo {
+        min-height: 250px
+      }
+
+      .yellow-banner img {
+        height: 260px
+      }
+
+      .split-img {
+        min-height: 300px
+      }
+
+      .review-item {
+        width: 285px;
+        flex-basis: 285px
+      }
+
+      .testimonial-card {
+        padding: 70px 22px 24px
+      }
+
+      .coming-card {
+        padding: 28px
+      }
+
+      .section-sm {
+        padding: 40px 0
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="scroll-container">
-  <div class="navbar-wrap">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-xl">
-        <a class="navbar-brand" href="#home"><img class="brand-logo" src="Assets/logos/globro_logo-cropped.svg" alt="Globro Logo"></a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav mx-auto mt-3 mt-lg-0">
-            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#how">Features</a></li>
-            <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Support</a></li>
-          </ul>
-          <div class="d-flex gap-2 align-items-center mt-3 mt-lg-0">
-            <button class="theme-btn" id="themeToggle" aria-label="Toggle theme"><i class="bi bi-sun"></i></button>
-            <a href="#contact" class="btn btn-globro">Bro! Let's Chat</a>
+  <div class="scroll-container">
+    <div class="navbar-wrap">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-xl">
+          <a class="navbar-brand" href="#home"><img class="brand-logo" src="Assets/logos/globro_logo-cropped.svg"
+              alt="Globro Logo"></a>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav mx-auto mt-3 mt-lg-0">
+              <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="#how">Features</a></li>
+              <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Support</a></li>
+            </ul>
+            <div class="d-flex gap-2 align-items-center mt-3 mt-lg-0">
+              <button class="theme-btn" id="themeToggle" aria-label="Toggle theme"><i class="bi bi-sun"></i></button>
+              <a href="#contact" class="btn btn-globro">Bro! Let's Chat</a>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </div>
+      </nav>
+    </div>
 
-  <main id="home">
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="container-xl position-relative">
-        <div class="row align-items-center">
-          <div class="col-lg-6 hero-section-content">
-            <span class="pill mb-4"><i class="bi bi-stars"></i> Your AI Global Brother</span>
-            <h1>Crack Your <span class="text-yellow">Global Future</span></h1>
-            <p>Don't Google, Let's Globro — Ask anything about study in <b> Germany and Italy.</b> You will get authentic study abroad guidance related admission, visa, budget, university, courses and more.</p>
-            <div class="d-flex flex-wrap gap-3 mt-4">
-              <a href="#contact" class="btn btn-soft" style="background:#0b3b21;color:#f3d700">Bro! Let's Chat</a>
-              <a href="#services" class="btn btn-soft">Explore</a>
-            </div>
-            <div class="trusted">
-              <div class="avatars">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="student">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="student">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="student">
+    <main id="home">
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <div class="container-xl position-relative">
+          <div class="row align-items-center">
+            <div class="col-lg-6 hero-section-content">
+              <span class="pill mb-4"><i class="bi bi-stars"></i> Your AI Global Brother</span>
+              <h1>Crack Your <span class="text-yellow">Global Future</span></h1>
+              <p>Don't Google, Let's Globro — Ask anything about study in <b> Germany and Italy.</b> You will get
+                authentic study abroad guidance related admission, visa, budget, university, courses and more.</p>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a href="#contact" class="btn btn-soft" style="background:#0b3b21;color:#f3d700">Bro! Let's Chat</a>
+                <a href="#services" class="btn btn-soft">Explore</a>
               </div>
-              <strong>10K+</strong><span class="text-muted small">students trust Globro</span>
+              <div class="trusted">
+                <div class="avatars">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                    alt="student">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                    alt="student">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop"
+                    alt="student">
+                </div>
+                <strong>10K+</strong><span class="text-muted small">students trust Globro</span>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="hero-art">
-              <div class="hero-figure"><img src="https://globro.ai/Assests/imgs/rocket_boy.webp" alt="Globro rocket boy"></div>
-              <div class="float-card fc-1"><i class="bi bi-mortarboard"></i> Crack Your Dream University</div>
-              <div class="float-card fc-2"><i class="bi bi-globe2"></i> Build Your Global Future</div>
-              <div class="float-card fc-3"><i class="bi bi-chat-dots"></i> Ask Anything 24/7</div>
+            <div class="col-lg-6">
+              <div class="hero-art">
+                <div class="hero-figure"><img src="https://globro.ai/Assests/imgs/rocket_boy.webp"
+                    alt="Globro rocket boy"></div>
+                <div class="float-card fc-1"><i class="bi bi-mortarboard"></i> Crack Your Dream University</div>
+                <div class="float-card fc-2"><i class="bi bi-globe2"></i> Build Your Global Future</div>
+                <div class="float-card fc-3"><i class="bi bi-chat-dots"></i> Ask Anything 24/7</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Video Section -->
-    <section class="section-sm vdo-sec" id="about">
-      <div class="container-xl">
-        <div class="card-soft guidance-card">
-          <div class="row align-items-center g-4">
-            <div class="col-lg-4">
-              <div class="shorts-frame-wrap">
-                <div class="shorts-frame">
-                  <iframe src="https://www.youtube.com/embed/so9vs1fe8sk" title="Globro YouTube Short" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <!-- Video Section -->
+      <section class="section-sm vdo-sec" id="about">
+        <div class="container-xl">
+          <div class="card-soft guidance-card">
+            <div class="row align-items-center g-4">
+              <div class="col-lg-4">
+                <div class="shorts-frame-wrap">
+                  <div class="shorts-frame">
+                    <iframe src="https://www.youtube.com/embed/so9vs1fe8sk" title="Globro YouTube Short"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-8 p-3 p-lg-5 video-section-content">
+                <div class="d-flex justify-content-between align-items-start gap-3 mb-4">
+                  <h2 class="display-6 mb-22" style="font-weight:900;letter-spacing:-4px;font-size:70px;">Your AI Bro
+                    For <span class="text-yellow" style="font-weight:900;">Study Abroad</span> Guidance</h2>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="feature-mini"><i class="bi bi-person-check"></i>
+                      <div>
+                        <h6>Expert Counselling</h6>
+                        <p>Get advice from experienced mentors.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature-mini"><i class="bi bi-building-check"></i>
+                      <div>
+                        <h6>University Shortlisting</h6>
+                        <p>Find the perfect university for your profile.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature-mini"><i class="bi bi-passport"></i>
+                      <div>
+                        <h6>Visa Assistance</h6>
+                        <p>End-to-end visa support made easy.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature-mini"><i class="bi bi-award"></i>
+                      <div>
+                        <h6>Scholarship Guidance</h6>
+                        <p>Maximize your chances of scholarships.</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-8 p-3 p-lg-5 video-section-content">
-              <div class="d-flex justify-content-between align-items-start gap-3 mb-4">
-                <h2 class="display-6 mb-22" style="font-weight:900;letter-spacing:-4px;font-size:70px;">Your AI Bro For <span class="text-yellow" style="font-weight:900;">Study Abroad</span> Guidance</h2>
-              </div>
-              <div class="row">
-                <div class="col-md-6"><div class="feature-mini"><i class="bi bi-person-check"></i><div><h6>Expert Counselling</h6><p>Get advice from experienced mentors.</p></div></div></div>
-                <div class="col-md-6"><div class="feature-mini"><i class="bi bi-building-check"></i><div><h6>University Shortlisting</h6><p>Find the perfect university for your profile.</p></div></div></div>
-                <div class="col-md-6"><div class="feature-mini"><i class="bi bi-passport"></i><div><h6>Visa Assistance</h6><p>End-to-end visa support made easy.</p></div></div></div>
-                <div class="col-md-6"><div class="feature-mini"><i class="bi bi-award"></i><div><h6>Scholarship Guidance</h6><p>Maximize your chances of scholarships.</p></div></div></div>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Services Section -->
-    <section class="section serv-sec" id="services">
-      <div class="container-xl">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-5 service-section-content">
-            <span class="pill mb-3">All-in-one support</span>
-            <h2 class="display-5 fw-bold" style="font-weight:900;letter-spacing:-2px">Everything You Need, <span class="text-yellow">All in One Place.</span></h2>
-            <p class="text-muted mt-3">Admission, visa, eligibility, accommodation and part-time job guidance — clear, verified and fast.</p>
-            <a href="#contact" class="btn btn-globro mt-3">Bro! Let's Chat</a>
-          </div>
-          <div class="col-lg-7">
-            <div class="phones-stage">
-              <img class="phone-img-main" src="./Assets/imgs/phone_usps.webp" alt="Globro phone USP">
-              <span class="tag t1">Admission</span><span class="tag t2">Visa</span><span class="tag t3">Part Time Job</span><span class="tag t4">Eligibility</span><span class="tag t5">Accommodation</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Desk Girl Section -->
-    <section class="section-sm girl-sec" id="how">
-      <div class="container-xl">
-        <div class="benefit-panel">
-          <div class="row align-items-center g-4">
-            <div class="col-lg-7">
-              <div class="benefit-item"><div class="benefit-icon"><i class="bi bi-unlock"></i></div><div><h5 class="girl-sec-ftre-h">100% Free Access</h5><p class="girl-sec-ftre-desc">Globro is always on ready to help anytime.</p></div></div>
-              <div class="benefit-item"><div class="benefit-icon"><i class="bi bi-patch-check"></i></div><div><h5 class="girl-sec-ftre-h">Authentic & Verified Information</h5><p class="girl-sec-ftre-desc">Globro provides authentic information related study abroad.</p></div></div>
-              <div class="benefit-item girl-sec-mb-res-ftre"><div class="benefit-icon"><i class="bi bi-clock-history"></i></div><div><h5 class="girl-sec-ftre-h">24/7 Availability</h5><p class="girl-sec-ftre-desc">Whether day or night, Globro is active round-the-clock to answer.</p></div></div>
-              <div class="benefit-item girl-sec-mb-res-ftre"><div class="benefit-icon"><i class="bi bi-mic"></i></div><div><h5 class="girl-sec-ftre-h">Voice Chat Support</h5><p class="girl-sec-ftre-desc">Students can speak directly instead of typing.</p></div></div>
-              <div class="benefit-item mb-0"><div class="benefit-icon"><i class="bi bi-translate"></i></div><div><h5 class="girl-sec-ftre-h">Multilingual Support</h5><p class="girl-sec-ftre-desc">Globro understands and replies in multiple languages.</p></div></div>
-            </div>
-            <div class="col-lg-5">
-              <div class="desk-illo"><img src="./Assets/imgs/desk_girl.webp" alt="Globro desk girl support"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bro Girl Section -->
-    <section class="section-sm bro-girl-sec">
-      <div class="container-xl">
-        <div class="yellow-banner">
-          <img src="./Assets/imgs/bro_girl.webp">
-          <div class="p-5 flex-grow-1">
-            <span class="pill bg-green text-white mb-3">No Consultancy, No Google</span>
-            <h2>No Consultancy,<br>No Google, Just <span class="text-green">Globro</span> ✈</h2>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Grad-boy-Section -->
-    <section class="section-sm grad-boy-sec">
-      <div class="container-xl">
-        <div class="split-card row g-0 align-items-stretch">
-          <div class="col-lg-5 split-copy d-flex flex-column justify-content-center">
-            <h2>Powered by empathy.<br>Guided by experience.</h2>
-            <div class="display-1 fw-bold text-white mt-4"><img src="./Assets/icons/white-spark.webp" alt="img" style="width:50%; margin-left:65%;" class="grad-boy-sec-sprk-icon"></div>
-          </div>
-          <div class="col-lg-7 split-img">
-            <img src="./Assets/imgs/grad_boy_with_bg.webp" alt="happy graduate boy" class="grad-boy">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonial Section -->
-    <section class="section" id="testimonials">
-      <div class="container-xl">
-        <div class="text-center mb-4">
-          <span class="pill mb-3">Student Reviews</span>
-          <!-- <h2 class="display-5 fw-bold" style="font-weight:900;letter-spacing:-2px">Real students. Real journeys.</h2> -->
-        </div>
-      </div>
-      <div class="review-marquee" id="reviewMarquee">
-        <div class="review-track">
-           <div class="review-item"><div class="testimonial-card yellow"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Jivani</h5><hr><p><b>Location :</b> Delhi</p><p><b>Review :</b> The admission process feels so smooth because of Globro.</p></div></div>
-          <div class="review-item"><div class="testimonial-card green"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Shikha</h5><hr><p><b>Location :</b> Faridabad</p><p><b>Review :</b> I received personalized university suggestions within seconds.</p></div></div>
-          <div class="review-item"><div class="testimonial-card light"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Aman</h5><hr><p><b>Location :</b> Noida</p><p><b>Review :</b> The AI support is amazing and super helpful.</p></div></div>
-          <div class="review-item"><div class="testimonial-card yellow"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Riya</h5><hr><p><b>Location :</b> Mumbai</p><p><b>Review :</b> Globro helped me compare universities without confusion.</p></div></div>
-          <div class="review-item"><div class="testimonial-card green"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Priya</h5><hr><p><b>Location :</b> Pune</p><p><b>Review :</b> Voice support made everything easy and quick.</p></div></div>
-          <div class="review-item"><div class="testimonial-card light"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Karan</h5><hr><p><b>Location :</b> Jaipur</p><p><b>Review :</b> Visa guidance was clear, simple and reliable.</p></div></div>
-          <div class="review-item"><div class="testimonial-card yellow"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Neha</h5><hr><p><b>Location :</b> Chandigarh</p><p><b>Review :</b> I found scholarship options I didn't know about.</p></div></div>
-          <div class="review-item"><div class="testimonial-card green"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Rahul</h5><hr><p><b>Location :</b> Bengaluru</p><p><b>Review :</b> 24/7 answers helped me plan faster.</p></div></div>
-
-          <div class="review-item"><div class="testimonial-card yellow"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Jivani</h5><hr><p><b>Location :</b> Delhi</p><p><b>Review :</b> The admission process feels so smooth because of Globro.</p></div></div>
-          <div class="review-item"><div class="testimonial-card green"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Shikha</h5><hr><p><b>Location :</b> Faridabad</p><p><b>Review :</b> I received personalized university suggestions within seconds.</p></div></div>
-          <div class="review-item"><div class="testimonial-card light"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Aman</h5><hr><p><b>Location :</b> Noida</p><p><b>Review :</b> The AI support is amazing and super helpful.</p></div></div>
-          <div class="review-item"><div class="testimonial-card yellow"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Riya</h5><hr><p><b>Location :</b> Mumbai</p><p><b>Review :</b> Globro helped me compare universities without confusion.</p></div></div>
-          <div class="review-item"><div class="testimonial-card green"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Priya</h5><hr><p><b>Location :</b> Pune</p><p><b>Review :</b> Voice support made everything easy and quick.</p></div></div>
-          <div class="review-item"><div class="testimonial-card light"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Karan</h5><hr><p><b>Location :</b> Jaipur</p><p><b>Review :</b> Visa guidance was clear, simple and reliable.</p></div></div>
-          <div class="review-item"><div class="testimonial-card yellow"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Neha</h5><hr><p><b>Location :</b> Chandigarh</p><p><b>Review :</b> I found scholarship options I didn't know about.</p></div></div>
-          <div class="review-item"><div class="testimonial-card green"><img src="./Assets/candidates/Ratul.webp" alt="Jivani"><h5>Rahul</h5><hr><p><b>Location :</b> Bengaluru</p><p><b>Review :</b> 24/7 answers helped me plan faster.</p></div></div> 
-        </div>
-      </div>
-    </section>
-
-    <!-- Last-Section -->
-    <section class="section-sm" style="display: flex;flex-direction: column;">
-      <div class="container-xl" style="height:50vh;">
-        <div class="coming-card">
+      <!-- Services Section -->
+      <section class="section serv-sec" id="services">
+        <div class="container-xl">
           <div class="row align-items-center g-5">
-            <div class="col-lg-6 d-flex justify-content-center">
-              <img class="coming-phone-img" src="./Assets/icons/tilt-2phone-croppedimg-removebg-preview.png" alt="Globro tilted phones" style="width:30%">
+            <div class="col-lg-5 service-section-content">
+              <span class="pill mb-3">All-in-one support</span>
+              <h2 class="display-5 fw-bold" style="font-weight:900;letter-spacing:-2px">Everything You Need, <span
+                  class="text-yellow">All in One Place.</span></h2>
+              <p class="text-muted mt-3">Admission, visa, eligibility, accommodation and part-time job guidance — clear,
+                verified and fast.</p>
+              <a href="#contact" class="btn btn-globro mt-3">Bro! Let's Chat</a>
             </div>
-            <div class="col-lg-6">
-              <span class="pill mb-3">Starting With Germany</span>
-              <h2 class="display-6 fw-bold" style="font-weight:900">Coming soon...</h2>
-              <div class="flags mt-3">
-                <span><img src="https://flagcdn.com/w40/it.png" class="flag-icon" alt="Italy Flag" style="border-radius: 5px;"></span>
-                <span><img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="USA Flag" style="border-radius: 5px;"></span>
-                <span><img src="https://flagcdn.com/w40/ca.png" class="flag-icon" alt="Canada Flag" style="border-radius: 5px;"></span>
-                <span><img src="https://flagcdn.com/w40/au.png" class="flag-icon" alt="Australia Flag" style="border-radius: 5px;"></span>
+            <div class="col-lg-7">
+              <div class="phones-stage">
+                <img class="phone-img-main" src="./Assets/imgs/phone_usps.webp" alt="Globro phone USP">
+                <span class="tag t1">Admission</span><span class="tag t2">Visa</span><span class="tag t3">Part Time
+                  Job</span><span class="tag t4">Eligibility</span><span class="tag t5">Accommodation</span>
               </div>
-      
             </div>
           </div>
         </div>
-      </div>
-      <footer id="contact">
-    <div class="container-xl">
-      <div class="row g-4">
-        <div class="col-lg-4"><img class="footer-logo" src="./Assets/logos/globro_logo.svg" alt="Globro Logo"><p class="mt-3">Your smart study abroad companion for verified answers, guidance and support.</p><div class="social mt-3"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-youtube"></i></a></div></div>
-        <div class="col-6 col-lg-2"><h6 class="footer-title">Quick Links</h6><p><a href="#home">Home</a></p><p><a href="#about">About Us</a></p><p><a href="#services">Services</a></p><p><a href="#how">How It Works</a></p></div>
-        <div class="col-6 col-lg-2"><h6 class="footer-title">Support</h6><p><a href="#">FAQ</a></p><p><a href="#">Privacy Policy</a></p><p><a href="#">Terms & Conditions</a></p><p><a href="#contact">Contact Us</a></p></div>
-        <div class="col-lg-4"><h6 class="footer-title">Get In Touch</h6><p><i class="bi bi-envelope-fill text-yellow me-2"></i> hello@globro.com</p><p><i class="bi bi-telephone-fill text-yellow me-2"></i> +91 98765 43210</p><p><i class="bi bi-clock-fill text-yellow me-2"></i> Available 24/7</p></div>
-      </div>
-      <div class="footer-bottom text-center">Copyright © 2025 Globro. All rights reserved. <span class="text-yellow">T&C Privacy</span></div>
-    </div>
-  </footer>
-    </section>
-  
-  </main>
+      </section>
 
-  
+      <!-- Desk Girl Section -->
+      <section class="section-sm girl-sec" id="how">
+        <div class="container-xl">
+          <div class="benefit-panel">
+            <div class="row align-items-center g-4">
+              <div class="col-lg-7">
+                <div class="benefit-item">
+                  <div class="benefit-icon"><i class="bi bi-unlock"></i></div>
+                  <div>
+                    <h5 class="girl-sec-ftre-h">100% Free Access</h5>
+                    <p class="girl-sec-ftre-desc">Globro is always on ready to help anytime.</p>
+                  </div>
+                </div>
+                <div class="benefit-item">
+                  <div class="benefit-icon"><i class="bi bi-patch-check"></i></div>
+                  <div>
+                    <h5 class="girl-sec-ftre-h">Authentic & Verified Information</h5>
+                    <p class="girl-sec-ftre-desc">Globro provides authentic information related study abroad.</p>
+                  </div>
+                </div>
+                <div class="benefit-item girl-sec-mb-res-ftre">
+                  <div class="benefit-icon"><i class="bi bi-clock-history"></i></div>
+                  <div>
+                    <h5 class="girl-sec-ftre-h">24/7 Availability</h5>
+                    <p class="girl-sec-ftre-desc">Whether day or night, Globro is active round-the-clock to answer.</p>
+                  </div>
+                </div>
+                <div class="benefit-item girl-sec-mb-res-ftre">
+                  <div class="benefit-icon"><i class="bi bi-mic"></i></div>
+                  <div>
+                    <h5 class="girl-sec-ftre-h">Voice Chat Support</h5>
+                    <p class="girl-sec-ftre-desc">Students can speak directly instead of typing.</p>
+                  </div>
+                </div>
+                <div class="benefit-item mb-0">
+                  <div class="benefit-icon"><i class="bi bi-translate"></i></div>
+                  <div>
+                    <h5 class="girl-sec-ftre-h">Multilingual Support</h5>
+                    <p class="girl-sec-ftre-desc">Globro understands and replies in multiple languages.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="desk-illo"><img src="./Assets/imgs/desk_girl.webp" alt="Globro desk girl support"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bro Girl Section -->
+      <section class="section-sm bro-girl-sec">
+        <div class="container-xl">
+          <div class="yellow-banner">
+            <img src="./Assets/imgs/bro_girl.webp">
+            <div class="p-5 flex-grow-1">
+              <span class="pill bg-green text-white mb-3">No Consultancy, No Google</span>
+              <h2>No Consultancy,<br>No Google, Just <span class="text-green">Globro</span> ✈</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Grad-boy-Section -->
+      <section class="section-sm grad-boy-sec">
+        <div class="container-xl">
+          <div class="split-card row g-0 align-items-stretch">
+            <div class="col-lg-5 split-copy d-flex flex-column justify-content-center">
+              <h2>Powered by empathy.<br>Guided by experience.</h2>
+              <div class="display-1 fw-bold text-white mt-4"><img src="./Assets/icons/white-spark.webp" alt="img"
+                  style="width:50%; margin-left:65%;" class="grad-boy-sec-sprk-icon"></div>
+            </div>
+            <div class="col-lg-7 split-img">
+              <img src="./Assets/imgs/grad_boy_with_bg.webp" alt="happy graduate boy" class="grad-boy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonial Section -->
+      <section class="section" id="testimonials">
+        <div class="container-xl">
+          <div class="text-center mb-4">
+            <span class="pill mb-3">Student Reviews</span>
+            <!-- <h2 class="display-5 fw-bold" style="font-weight:900;letter-spacing:-2px">Real students. Real journeys.</h2> -->
+          </div>
+        </div>
+        <div class="review-marquee" id="reviewMarquee">
+          <div class="review-track">
+            <div class="review-item">
+              <div class="testimonial-card yellow"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Jivani</h5>
+                <hr>
+                <p><b>Location :</b> Delhi</p>
+                <p><b>Review :</b> The admission process feels so smooth because of Globro.</p>
+              </div>
+            </div>
+            <div class="review-item">
+              <div class="testimonial-card green"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Shikha</h5>
+                <hr>
+                <p><b>Location :</b> Faridabad</p>
+                <p><b>Review :</b> I received personalized university suggestions within seconds.</p>
+              </div>
+            </div>
+            <div class="review-item">
+              <div class="testimonial-card light"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Aman</h5>
+                <hr>
+                <p><b>Location :</b> Noida</p>
+                <p><b>Review :</b> The AI support is amazing and super helpful.</p>
+              </div>
+            </div>
+            <div class="review-item">
+              <div class="testimonial-card yellow"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Riya</h5>
+                <hr>
+                <p><b>Location :</b> Mumbai</p>
+                <p><b>Review :</b> Globro helped me compare universities without confusion.</p>
+              </div>
+            </div>
+            <div class="review-item">
+              <div class="testimonial-card green"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Priya</h5>
+                <hr>
+                <p><b>Location :</b> Pune</p>
+                <p><b>Review :</b> Voice support made everything easy and quick.</p>
+              </div>
+            </div>
+            <div class="review-item">
+              <div class="testimonial-card light"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Karan</h5>
+                <hr>
+                <p><b>Location :</b> Jaipur</p>
+                <p><b>Review :</b> Visa guidance was clear, simple and reliable.</p>
+              </div>
+            </div>
+            <div class="review-item">
+              <div class="testimonial-card yellow"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Neha</h5>
+                <hr>
+                <p><b>Location :</b> Chandigarh</p>
+                <p><b>Review :</b> I found scholarship options I didn't know about.</p>
+              </div>
+            </div>
+            <div class="review-item">
+              <div class="testimonial-card green"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Rahul</h5>
+                <hr>
+                <p><b>Location :</b> Bengaluru</p>
+                <p><b>Review :</b> 24/7 answers helped me plan faster.</p>
+              </div>
+            </div>
+
+            <div class="review-item">
+              <div class="testimonial-card yellow"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Jivani</h5>
+                <hr>
+                <p><b>Location :</b> Delhi</p>
+                <p><b>Review :</b> The admission process feels so smooth because of Globro.</p>
+              </div>
+            </div>
+            <div class="review-item">
+              <div class="testimonial-card green"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Shikha</h5>
+                <hr>
+                <p><b>Location :</b> Faridabad</p>
+                <p><b>Review :</b> I received personalized university suggestions within seconds.</p>
+              </div>
+            </div>
+            <div class="review-item">
+              <div class="testimonial-card light"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Aman</h5>
+                <hr>
+                <p><b>Location :</b> Noida</p>
+                <p><b>Review :</b> The AI support is amazing and super helpful.</p>
+              </div>
+            </div>
+            <div class="review-item">
+              <div class="testimonial-card yellow"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Riya</h5>
+                <hr>
+                <p><b>Location :</b> Mumbai</p>
+                <p><b>Review :</b> Globro helped me compare universities without confusion.</p>
+              </div>
+            </div>
+            <div class="review-item">
+              <div class="testimonial-card green"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Priya</h5>
+                <hr>
+                <p><b>Location :</b> Pune</p>
+                <p><b>Review :</b> Voice support made everything easy and quick.</p>
+              </div>
+            </div>
+            <div class="review-item">
+              <div class="testimonial-card light"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Karan</h5>
+                <hr>
+                <p><b>Location :</b> Jaipur</p>
+                <p><b>Review :</b> Visa guidance was clear, simple and reliable.</p>
+              </div>
+            </div>
+            <div class="review-item">
+              <div class="testimonial-card yellow"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Neha</h5>
+                <hr>
+                <p><b>Location :</b> Chandigarh</p>
+                <p><b>Review :</b> I found scholarship options I didn't know about.</p>
+              </div>
+            </div>
+            <div class="review-item">
+              <div class="testimonial-card green"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
+                <h5>Rahul</h5>
+                <hr>
+                <p><b>Location :</b> Bengaluru</p>
+                <p><b>Review :</b> 24/7 answers helped me plan faster.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Last-Section -->
+      <section class="section-sm" style="display: flex;flex-direction: column;">
+        <div class="container-xl" style="height:50vh;">
+          <div class="coming-card">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6 d-flex justify-content-center">
+                <img class="coming-phone-img" src="./Assets/icons/tilt-2phone-croppedimg-removebg-preview.png"
+                  alt="Globro tilted phones" style="width:30%">
+              </div>
+              <div class="col-lg-6">
+                <span class="pill mb-3">Starting With Germany</span>
+                <h2 class="display-6 fw-bold" style="font-weight:900">Coming soon...</h2>
+                <div class="flags mt-3">
+                  <span><img src="https://flagcdn.com/w40/it.png" class="flag-icon" alt="Italy Flag"
+                      style="border-radius: 5px;"></span>
+                  <span><img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="USA Flag"
+                      style="border-radius: 5px;"></span>
+                  <span><img src="https://flagcdn.com/w40/ca.png" class="flag-icon" alt="Canada Flag"
+                      style="border-radius: 5px;"></span>
+                  <span><img src="https://flagcdn.com/w40/au.png" class="flag-icon" alt="Australia Flag"
+                      style="border-radius: 5px;"></span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="contact">
+          <div class="container-xl">
+            <div class="row g-4">
+              <div class="col-lg-4"><img class="footer-logo" src="./Assets/logos/globro_logo.svg" alt="Globro Logo">
+                <p class="mt-3">Your smart study abroad companion for verified answers, guidance and support.</p>
+                <div class="social mt-3"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i
+                      class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i
+                      class="bi bi-youtube"></i></a></div>
+              </div>
+              <div class="col-6 col-lg-2">
+                <h6 class="footer-title">Quick Links</h6>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#about">About Us</a></p>
+                <p><a href="#services">Services</a></p>
+                <p><a href="#how">How It Works</a></p>
+              </div>
+              <div class="col-6 col-lg-2">
+                <h6 class="footer-title">Support</h6>
+                <p><a href="#">FAQ</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Terms & Conditions</a></p>
+                <p><a href="#contact">Contact Us</a></p>
+              </div>
+              <div class="col-lg-4">
+                <h6 class="footer-title">Get In Touch</h6>
+                <p><i class="bi bi-envelope-fill text-yellow me-2"></i> hello@globro.com</p>
+                <p><i class="bi bi-telephone-fill text-yellow me-2"></i> +91 98765 43210</p>
+                <p><i class="bi bi-clock-fill text-yellow me-2"></i> Available 24/7</p>
+              </div>
+            </div>
+            <div class="footer-bottom text-center">Copyright © 2025 Globro. All rights reserved. <span
+                class="text-yellow">T&C Privacy</span></div>
+          </div>
+        </footer>
+      </section>
+
+    </main>
+
+
 
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
 
-// testimonials
-  document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
-      anchor.addEventListener('click',function(e){
-        const target=document.querySelector(this.getAttribute('href'));
-        if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+    // testimonials
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       });
     });
 
     const reviewMarquee = document.getElementById('reviewMarquee');
-    ['mouseenter','touchstart','pointerdown'].forEach(function(evt){
-      reviewMarquee.addEventListener(evt,function(){ reviewMarquee.classList.add('paused'); },{passive:true});
+    ['mouseenter', 'touchstart', 'pointerdown'].forEach(function (evt) {
+      reviewMarquee.addEventListener(evt, function () { reviewMarquee.classList.add('paused'); }, { passive: true });
     });
-    ['mouseleave','touchend','pointerup','touchcancel'].forEach(function(evt){
-      reviewMarquee.addEventListener(evt,function(){ reviewMarquee.classList.remove('paused'); },{passive:true});
+    ['mouseleave', 'touchend', 'pointerup', 'touchcancel'].forEach(function (evt) {
+      reviewMarquee.addEventListener(evt, function () { reviewMarquee.classList.remove('paused'); }, { passive: true });
     });
 
-    const themeBtn=document.getElementById('themeToggle');
-    let dark=false;
-    themeBtn.addEventListener('click',function(){
-      dark=!dark;
+    const themeBtn = document.getElementById('themeToggle');
+    let dark = false;
+    themeBtn.addEventListener('click', function () {
+      dark = !dark;
       document.body.style.background = dark ? '#06160d' : '#fff';
       document.body.style.color = dark ? '#eef8f0' : '#071d12';
       themeBtn.innerHTML = dark ? '<i class="bi bi-moon-stars"></i>' : '<i class="bi bi-sun"></i>';
-      document.querySelectorAll('.card-soft,.coming-card,.split-card,.float-card,.theme-btn').forEach(function(el){
+      document.querySelectorAll('.card-soft,.coming-card,.split-card,.float-card,.theme-btn').forEach(function (el) {
         el.style.background = dark ? 'rgba(9,34,19,.92)' : '';
         el.style.color = dark ? '#eef8f0' : '';
       });
     });
- 
 
 
-  // Scrollbehaiver
-// scroller effect
 
-const sections = document.querySelectorAll("section");
-let index = 0;
-let isScrolling = false;
-let startY = 0;
+    // Scrollbehaiver
+    // scroller effect
+    // scroller effect
 
-function activateSection(i) {
-    sections.forEach((sec, idx) => {
+    const sections = document.querySelectorAll("section");
+
+    let index = 0;
+    let isScrolling = false;
+    let startY = 0;
+    let currentY = 0;
+
+    function activateSection(i) {
+      sections.forEach((sec, idx) => {
         sec.classList.toggle("active", idx === i);
+      });
+    }
+
+    activateSection(index);
+
+
+    /* Desktop + Trackpad */
+    window.addEventListener("wheel", (e) => {
+
+      if (isScrolling) return;
+
+      if (Math.abs(e.deltaY) < 50) return;
+
+      isScrolling = true;
+
+      if (e.deltaY > 0) {
+        index++;
+      } else {
+        index--;
+      }
+
+      index = Math.max(
+        0,
+        Math.min(index, sections.length - 1)
+      );
+
+      activateSection(index);
+
+      setTimeout(() => {
+        isScrolling = false;
+      }, 350);
+
+    }, { passive: true });
+
+
+    /* Mobile Swipe */
+    window.addEventListener("touchstart", (e) => {
+      startY = e.touches[0].clientY;
+      currentY = startY;
+    }, { passive: false });
+
+    window.addEventListener("touchmove", (e) => {
+
+      // stop refresh / native scroll
+      e.preventDefault();
+
+      currentY = e.touches[0].clientY;
+
+    }, { passive: false });
+
+    window.addEventListener("touchend", () => {
+
+      if (isScrolling) return;
+
+      const diff = startY - currentY;
+
+      if (Math.abs(diff) < 40) return;
+
+      isScrolling = true;
+
+      if (diff > 0) {
+        index++; // next
+      } else {
+        index--; // back
+      }
+
+      index = Math.max(
+        0,
+        Math.min(index, sections.length - 1)
+      );
+
+      activateSection(index);
+
+      setTimeout(() => {
+        isScrolling = false;
+      }, 300);
+
     });
-}
-
-activateSection(index);
-
-// Desktop + Touchpad scroll
-window.addEventListener("wheel", (e) => {
-
-    if (isScrolling) return;
-
-    // tiny trackpad movement ignore
-    if (Math.abs(e.deltaY) < 50) return;
-
-    isScrolling = true;
-
-    if (e.deltaY > 0) {
-        index++;
-    } else {
-        index--;
-    }
-
-    index = Math.max(
-        0,
-        Math.min(index, sections.length - 1)
-    );
-
-    activateSection(index);
-
-    setTimeout(() => {
-        isScrolling = false;
-    }, 350);
-
-}, { passive: true });
-
-
-// Mobile touch scroll
-window.addEventListener("touchstart", (e) => {
-    startY = e.touches[0].clientY;
-});
-
-window.addEventListener("touchend", (e) => {
-
-    if (isScrolling) return;
-
-    let endY = e.changedTouches[0].clientY;
-    let diff = startY - endY;
-
-    // small touch ignore
-    if (Math.abs(diff) < 50) return;
-
-    isScrolling = true;
-
-    if (diff > 0) {
-        index++;
-    } else {
-        index--;
-    }
-
-    index = Math.max(
-        0,
-        Math.min(index, sections.length - 1)
-    );
-
-    activateSection(index);
-
-    setTimeout(() => {
-        isScrolling = false;
-    }, 300);
-});
   </script>
 </body>
+
 </html>
