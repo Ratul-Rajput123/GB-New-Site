@@ -131,7 +131,10 @@
       backdrop-filter: blur(14px)
     }
 
-
+    /* chat button */
+    .chat-btn-mobile{
+      display: none;
+     }
     /* Scroll */
     .scroll-container {
       position: relative;
@@ -808,6 +811,20 @@
 
       /* ///////////////////////////////////////////////////// start */
       /* hero Section */
+
+    .chat-btn-mobile{
+    position: absolute;
+    margin-left: 55vw;
+    z-index: 10;
+    display:block;
+    background: var(--green);
+    color: var(--yellow);
+    border: 1px solid var(--green);
+    border-radius: 14px;
+    padding: 8px 17px;
+    font-weight: 900;
+     }
+
       .hero-section-content {
         display: none;
       }
@@ -1032,11 +1049,14 @@
 <body>
 
   <div class="scroll-container">
+    
     <div class="navbar-wrap">
       <nav class="navbar navbar-expand-lg">
         <div class="container-xl">
           <a class="navbar-brand" href="#home"><img class="brand-logo" src="Assets/logos/globro_logo-cropped.svg"
               alt="Globro Logo"></a>
+
+           <button class="chat-btn-mobile" href="https://chat.globro.ai/">Bro! Let's Chat</button>    
           <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
             data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="mainNav">
@@ -1050,14 +1070,14 @@
             </ul>
             <div class="d-flex gap-2 align-items-center mt-3 mt-lg-0">
               <button class="theme-btn" id="themeToggle" aria-label="Toggle theme"><i class="bi bi-sun"></i></button>
-              <a href="#contact" class="btn btn-globro">Bro! Let's Chat</a>
-            </div>
+              <a href="https://chat.globro.ai/" class="btn btn-globro">Bro! Let's Chat</a>
           </div>
         </div>
       </nav>
     </div>
 
     <main id="home">
+     
       <!-- HERO SECTION -->
       <section class="hero">
         <div class="container-xl position-relative">
@@ -1068,7 +1088,7 @@
               <p>Don't Google, Let's Globro — Ask anything about study in <b> Germany and Italy.</b> You will get
                 authentic study abroad guidance related admission, visa, budget, university, courses and more.</p>
               <div class="d-flex flex-wrap gap-3 mt-4">
-                <a href="#contact" class="btn btn-soft" style="background:#0b3b21;color:#f3d700">Bro! Let's Chat</a>
+                <a href="https://chat.globro.ai/" class="btn btn-soft" style="background:#0b3b21;color:#f3d700">Bro! Let's Chat</a>
                 <a href="#services" class="btn btn-soft">Explore</a>
               </div>
               <div class="trusted">
