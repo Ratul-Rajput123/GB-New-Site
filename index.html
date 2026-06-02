@@ -795,7 +795,7 @@
       }
 
       .split-copy {
-        padding: 36px
+        padding: 34px
       }
 
       .video-card video {
@@ -828,32 +828,41 @@
         font-weight: 900;
       }
 
-      .hero-figure img{
-        scale:1.3;
+      .hero-figure img {
+        position: absolute;
+        scale: 1.3;
+        padding-bottom: 12vh;
       }
-      .hero-section-content {
+
+      .hero-section-content-mbl-none {
         display: none;
       }
 
       .fc-1 {
         left: 0;
-        top: -10px
+        top: -27%;
+
       }
 
       .fc-2 {
         right: 0;
-        top: 200px
+        top: 35%;
       }
 
       .fc-3 {
         left: 0px;
-        bottom: 20px
+        bottom: 23%;
       }
 
       .navbar-toggler-icon {
         display: none;
       }
 
+      .trusted {
+        z-index: 10;
+        position: absolute;
+        bottom: -10%;
+      }
 
       /* video section */
       .vdo-sec {
@@ -871,6 +880,29 @@
         backdrop-filter: none;
       }
 
+
+      .shorts-frame {
+        position: relative;
+        width: 125%;
+        height: 125%;
+        aspect-ratio: 9/16;
+        /* border-radius: 20px; */
+        overflow: hidden;
+        /* background: #000 */
+      }
+
+      .shorts-frame iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0
+      }
+
+      .section-mble {
+        margin: 40px -24px;
+      }
+
       /* service section */
       .serv-sec {
         margin-top: 25%;
@@ -883,7 +915,11 @@
       #services {
         box-shadow: none;
         background: none;
-      border: none;
+        border: none;
+      }
+
+      .phone-img-main {
+        left: -2%;
       }
 
       /* desk girls section */
@@ -909,7 +945,18 @@
 
       /* bro-girl section */
       .bro-girl-sec {
-        margin-top: 20%;
+        margin-top: 10%;
+      }
+
+      .mb-bro-grl-sec {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      .yellow-banner img {
+        scale: 1.6;
+        padding-bottom: 15%;
+        padding-left: 4%;
       }
 
       /* grad-bot section */
@@ -918,7 +965,9 @@
       }
 
       .grad-boy-sec-sprk-icon {
-        display: none;
+        position: absolute;
+        top: 10%;
+        right: 1%;
       }
 
       .split-img img {
@@ -943,8 +992,23 @@
       .footer-sec-mb-res {
         display: none;
       }
+
       .coming-phone-img {
-        scale:1.5;
+        scale: 2.2;
+      }
+
+      .coming-card {
+        margin-top: 60px;
+        border-radius: none;
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
+
+      .last-sec-mb-flg-div {
+        margin-top: 78px;
+        letter-spacing: -2px;
+        line-height: 0px;
       }
 
       /* /////////////////////////////////////////////////// End */
@@ -995,11 +1059,11 @@
 
       .tag.t1 {
         left: -3%;
-    top: 6%;
+        top: 6%;
       }
 
       .tag.t2 {
-            left: 11%;
+        left: 11%;
         top: 53%;
       }
 
@@ -1027,10 +1091,6 @@
         min-height: 250px
       }
 
-      .yellow-banner img {
-        height: 260px
-      }
-
       .split-img {
         min-height: 300px
       }
@@ -1051,6 +1111,7 @@
       .section-sm {
         padding: 40px 0
       }
+
     }
   </style>
 </head>
@@ -1059,6 +1120,7 @@
 
   <div class="scroll-container">
 
+    <!-- NAVBAR -->
     <div class="navbar-wrap">
       <nav class="navbar navbar-expand-lg">
         <div class="container-xl">
@@ -1091,15 +1153,18 @@
       <section class="hero">
         <div class="container-xl position-relative">
           <div class="row align-items-center">
-            <div class="col-lg-6 hero-section-content">
-              <span class="pill mb-4"><i class="bi bi-stars"></i> Your AI Global Brother</span>
-              <h1>Crack Your <span class="text-yellow">Global Future</span></h1>
-              <p>Don't Google, Let's Globro — Ask anything about study in <b> Germany and Italy.</b> You will get
+            <div class="col-lg-6">
+              <span class="pill mb-4 hero-section-content-mbl-none"><i class="bi bi-stars"></i> Your AI Global
+                Brother</span>
+              <h1 class="hero-section-content-mbl-none">Crack Your <span class="text-yellow">Global Future</span></h1>
+              <p class="hero-section-content-mbl-none">Don't Google, Let's Globro — Ask anything about study in <b>
+                  Germany and Italy.</b> You will get
                 authentic study abroad guidance related admission, visa, budget, university, courses and more.</p>
-              <div class="d-flex flex-wrap gap-3 mt-4">
-                <a href="https://chat.globro.ai/" class="btn btn-soft" style="background:#0b3b21;color:#f3d700">Bro!
+              <div class="d-flex flex-wrap gap-3 mt-4 hero-section-content-mbl-none">
+                <a href="https://chat.globro.ai/" class="btn btn-soft hero-section-content-mbl-none"
+                  style="background:#0b3b21;color:#f3d700">Bro!
                   Let's Chat</a>
-                <a href="#services" class="btn btn-soft">Explore</a>
+                <a href="#services" class="btn btn-soft hero-section-content-mbl-none">Explore</a>
               </div>
               <div class="trusted">
                 <div class="avatars">
@@ -1110,7 +1175,7 @@
                   <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop"
                     alt="student">
                 </div>
-                <strong>20K+</strong><span class="text-muted small">students trust Globro</span>
+                <strong>20K+</strong><span class="text-bold small">students trust Globro</span>
               </div>
             </div>
             <div class="col-lg-6">
@@ -1127,7 +1192,7 @@
       </section>
 
       <!-- Video Section -->
-      <section class="section-sm vdo-sec" id="about">
+      <section class="section-sm section-mble vdo-sec" id="about">
         <div class="container-xl">
           <div class="card-soft guidance-card">
             <div class="row align-items-center g-4">
@@ -1262,7 +1327,7 @@
       <!-- Bro Girl Section -->
       <section class="section-sm bro-girl-sec">
         <div class="container-xl">
-          <div class="yellow-banner">
+          <div class="yellow-banner mb-bro-grl-sec">
             <img src="./Assets/imgs/bro_girl.webp">
             <div class="p-5 flex-grow-1">
               <span class="pill bg-green text-white mb-3">No Consultancy, No Google</span>
@@ -1440,7 +1505,7 @@
                 <img class="coming-phone-img" src="./Assets/icons/tilt-2phone-croppedimg-removebg-preview.png"
                   alt="Globro tilted phones" style="width:30%">
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-6 last-sec-mb-flg-div">
                 <span class="pill mb-3">Starting With Germany</span>
                 <h2 class="display-6 fw-bold" style="font-weight:900">Coming soon...</h2>
                 <div class="flags mt-3">
