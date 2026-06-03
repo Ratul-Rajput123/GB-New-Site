@@ -90,6 +90,7 @@
       border: 1px solid var(--green);
       border-radius: 14px;
       padding: 8px 17px;
+      margin-left: 59vw;
       font-weight: 900;
       box-shadow: 0 12px 24px rgba(8, 45, 24, .18)
     }
@@ -997,7 +998,7 @@
       }
 
       footer{
-        margin-top:105px;
+        margin-top:80px;
       }
 
       .footer-bottom {
@@ -1010,12 +1011,12 @@
       }
 
       .coming-phone-img {
-        scale: 3.1;
+        scale: 2.6;
         margin-top: 18px;
       }
 
       .coming-card {
-        margin-top: 100px;
+        margin-top: 95px;
         border-radius: none;
         background: none;
         border: none;
@@ -1023,7 +1024,7 @@
       }
 
       .last-sec-mb-flg-div {
-        margin-top: 120px;
+        margin-top: 88px;
         letter-spacing: -2px;
         line-height: 0px;
         margin-left: 15vw;
@@ -1149,14 +1150,14 @@
           <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
             data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav mx-auto mt-3 mt-lg-0">
+            <!-- <ul class="navbar-nav mx-auto mt-3 mt-lg-0">
               <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
               <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
               <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-              <li class="nav-item"><a class="nav-link" href="#how">Features</a></li>
+              <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
               <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-              <li class="nav-item"><a class="nav-link" href="#contact">Support</a></li>
-            </ul>
+              <li class="nav-item"><a class="nav-link" href="#support">Support</a></li>
+            </ul> -->
             <div class="d-flex gap-2 align-items-center mt-3 mt-lg-0">
               <button class="theme-btn" id="themeToggle" aria-label="Toggle theme"><i class="bi bi-sun"></i></button>
               <a href="https://chat.globro.ai/" class="btn btn-globro">Bro! Let's Chat</a>
@@ -1168,7 +1169,7 @@
     <main id="home">
 
       <!-- HERO SECTION -->
-      <section class="hero">
+      <section id="home" class="hero">
         <div class="container-xl position-relative">
           <div class="row align-items-center">
             <div class="col-lg-6">
@@ -1209,7 +1210,7 @@
       </section>
 
       <!-- Video Section -->
-      <section class="section-sm section-mble vdo-sec" id="about">
+      <section id="about" class="section-sm section-mble vdo-sec" id="about">
         <div class="container-xl">
           <h4 class="section-headings"
             style="position: absolute;font-weight: 600;left: 42%;top:-3%;z-index:10;color: #112c18;background-color:#ffe300;border-radius:20px;padding:5px 15px">
@@ -1272,7 +1273,7 @@
       </section>
 
       <!-- Services Section -->
-      <section class="section serv-sec" id="services">
+      <section  id="services" class="section serv-sec" id="services">
         <div class="container-xl">
           <h4 class="section-headings"
             style="position:absolute;font-style:bold;font-weight: 600;left:28%;top:0%;color: #112c18;background-color:#ffe300;border-radius:20px;padding:5px 15px">
@@ -1298,7 +1299,7 @@
       </section>
 
       <!-- Desk Girl Section -->
-      <section class="section-sm girl-sec" id="how">
+      <section id="features" class="section-sm girl-sec" id="how">
         <div class="container-xl">
           <div class="benefit-panel">
             <div class="row align-items-center g-4">
@@ -1361,7 +1362,7 @@
       </section>
 
       <!-- Grad-boy-Section -->
-      <section class="section-sm grad-boy-sec">
+      <section  class="section-sm grad-boy-sec">
         <div class="container-xl">
           <div class="split-card row g-0 align-items-stretch">
             <div class="col-lg-5 split-copy d-flex flex-column justify-content-center">
@@ -1377,7 +1378,7 @@
       </section>
 
       <!-- Testimonial Section -->
-      <section class="section" id="testimonials">
+      <section id="testimonials" class="section" id="testimonials">
         <h4 class="section-headings"
           style="position:absolute;font-style:bold;font-weight: 600;left: 35%;top:12%;color: #112c18;background-color:#ffe300;border-radius:20px;padding:5px 15px">
           Reviews</h4>
@@ -1491,7 +1492,7 @@
       </section>
 
       <!-- Last-Section -->
-      <section class="section-sm" style="display: flex;flex-direction: column;">
+      <section id="support" class="section-sm" style="display: flex;flex-direction: column;">
         <div class="container-xl" style="height:50vh;">
           <div class="coming-card">
             <div class="row align-items-center g-5">
@@ -1533,20 +1534,18 @@
                 <p><a href="#home">Home</a></p>
                 <p><a href="#about">About Us</a></p>
                 <p><a href="#services">Services</a></p>
-                <p><a href="#how">How It Works</a></p>
+                <p><a href="#features">Features</a></p>
+                <p><a href="#testimonials">Testimonial</a></p>
+                <p><a href="#support">Support</a></p>
               </div>
               <div class="col-6 col-lg-2 footer-sec-mb-res">
                 <h6 class="footer-title">Support</h6>
-                <p><a href="#">FAQ</a></p>
-                <p><a href="#">Privacy Policy</a></p>
-                <p><a href="#">Terms & Conditions</a></p>
-                <p><a href="#contact">Contact Us</a></p>
+                <p><a href="/privacy.html">Privacy Policy</a></p>
+                <p><a href="/terms.html">Terms & Conditions</a></p>
               </div>
               <div class="col-lg-4 footer-sec-mb-res">
                 <h6 class="footer-title">Get In Touch</h6>
-                <p><i class="bi bi-envelope-fill text-yellow me-2"></i> hello@globro.com</p>
-                <p><i class="bi bi-telephone-fill text-yellow me-2"></i> +91 98765 43210</p>
-                <p><i class="bi bi-clock-fill text-yellow me-2"></i> Available 24/7</p>
+                <p><i class="bi bi-envelope-fill text-yellow me-2"></i>globro.ai</p>
               </div>
             </div>
             <div class="footer-bottom text-center">
