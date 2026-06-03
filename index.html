@@ -64,9 +64,6 @@
       padding: 86px 0
     }
 
-    .section-headings{
-      display: none;
-    }
     .section-sm {
       padding: 56px 0
     }
@@ -749,6 +746,13 @@
       box-shadow: 0 15px 30px rgba(0, 0, 0, .22)
     }
 
+    @media (min-width:1080px) {
+
+      .section-headings {
+        display: none;
+      }
+    }
+
     @media (max-width:991px) {
       .section {
         padding: 66px 0
@@ -992,16 +996,26 @@
         display: none
       }
 
+      footer{
+        margin-top:105px;
+      }
+
+      .footer-bottom {
+        margin-top: 16px;
+        padding-top: 8px;
+      }
+
       .footer-sec-mb-res {
         display: none;
       }
 
       .coming-phone-img {
-        scale: 2.2;
+        scale: 3.1;
+        margin-top: 18px;
       }
 
       .coming-card {
-        margin-top: 60px;
+        margin-top: 100px;
         border-radius: none;
         background: none;
         border: none;
@@ -1009,7 +1023,7 @@
       }
 
       .last-sec-mb-flg-div {
-        margin-top: 88px;
+        margin-top: 120px;
         letter-spacing: -2px;
         line-height: 0px;
         margin-left: 15vw;
@@ -1172,8 +1186,7 @@
               </div>
               <div class="trusted">
                 <div class="avatars">
-                  <img src="./Assets/candidates/indiangirl.png"
-                    alt="student">
+                  <img src="./Assets/candidates/indiangirl.png" alt="student">
                   <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
                     alt="student">
                   <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop"
@@ -1198,7 +1211,9 @@
       <!-- Video Section -->
       <section class="section-sm section-mble vdo-sec" id="about">
         <div class="container-xl">
-          <h4 class="section-headings" style="position: absolute;font-weight: 600;left: 42%;top:-3%;z-index:10;color: #112c18;background-color:#ffe300;border-radius:20px;padding:5px 15px">Video</h4>
+          <h4 class="section-headings"
+            style="position: absolute;font-weight: 600;left: 42%;top:-3%;z-index:10;color: #112c18;background-color:#ffe300;border-radius:20px;padding:5px 15px">
+            Video</h4>
           <div class="card-soft guidance-card">
             <div class="row align-items-center g-4">
               <div class="col-lg-4">
@@ -1259,7 +1274,9 @@
       <!-- Services Section -->
       <section class="section serv-sec" id="services">
         <div class="container-xl">
-          <h4 class="section-headings" style="position:absolute;font-style:bold;font-weight: 600;left:28%;top:0%;color: #112c18;background-color:#ffe300;border-radius:20px;padding:5px 15px">Services</h4>
+          <h4 class="section-headings"
+            style="position:absolute;font-style:bold;font-weight: 600;left:28%;top:0%;color: #112c18;background-color:#ffe300;border-radius:20px;padding:5px 15px">
+            Services</h4>
           <div class="row align-items-center g-5">
             <div class="col-lg-5 service-section-content">
               <span class="pill mb-3">All-in-one support</span>
@@ -1361,8 +1378,10 @@
 
       <!-- Testimonial Section -->
       <section class="section" id="testimonials">
-        <h4 class="section-headings"  style="position:absolute;font-style:bold;font-weight: 600;left: 35%;top:12%;color: #112c18;background-color:#ffe300;border-radius:20px;padding:5px 15px">Reviews</h4>
-        
+        <h4 class="section-headings"
+          style="position:absolute;font-style:bold;font-weight: 600;left: 35%;top:12%;color: #112c18;background-color:#ffe300;border-radius:20px;padding:5px 15px">
+          Reviews</h4>
+
         <div class="container-xl tetimonal-sec-heading">
           <div class="text-center mb-4">
             <span class="pill mb-3">Student Reviews</span>
@@ -1403,7 +1422,7 @@
                 <p><b>Review :</b> Globro helped me compare universities without confusion.</p>
               </div>
             </div>
-                        <div class="review-item">
+            <div class="review-item">
               <div class="testimonial-card yellow"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
                 <h5>Aman</h5>
                 <hr>
@@ -1435,7 +1454,7 @@
                 <p><b>Review :</b> Globro helped me compare universities without confusion.</p>
               </div>
             </div>
-                        <div class="review-item">
+            <div class="review-item">
               <div class="testimonial-card yellow"><img src="./Assets/candidates/Ratul.webp" alt="Jivani">
                 <h5>Aman</h5>
                 <hr>
@@ -1503,7 +1522,8 @@
             <div class="row g-4">
               <div class="col-lg-4">
                 <img class="footer-logo" src="./Assets/icons/white-spark.webp" alt="Globro Logo">
-                <p class="mt-3">Get Verified Answers, Personalized Guidance & Instant Support for Your Global Journey.</p>
+                <p class="mt-3">Get Verified Answers, Personalized Guidance & Instant Support for Your Global Journey.
+                </p>
                 <div class="social mt-3"><a href="https://www.instagram.com/globro.ai"><i
                       class="bi bi-instagram"></i></a><a href="https://www.youtube.com/@globro-ai"><i
                       class="bi bi-youtube"></i></a></div>
